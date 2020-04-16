@@ -9,8 +9,6 @@ import {
 import "../css_ella/globalnav.css";
 
 export default class GlobalNav extends Component {
-  componentDidMount() {}
-
   render() {
     return (
       <nav className="sticky-container-e">

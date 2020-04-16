@@ -6,6 +6,7 @@ export default class SplashPage extends Component {
   logIn = (e) => {
     navigate(`/login`);
   };
+
   render() {
     return (
       <div className="splash-e" onClick={this.logIn}>

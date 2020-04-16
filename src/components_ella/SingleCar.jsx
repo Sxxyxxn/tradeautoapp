@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Axios from "axios";
 import "../css/shared.css";
 import "../css_ella/view_car_details.css";
+import "../css_ella/home.css";
 import * as UTILS from "../utils";
 
 export default class SingleCar extends Component {
@@ -43,6 +44,17 @@ export default class SingleCar extends Component {
               {this.props.make} {this.props.model}
             </h1>
             <h1 style={{ marginLeft: "2rem" }}>${this.props.price}</h1>
+          </div>
+
+          <div className="odometer-year-container-e">
+            <p className="my-car-sign-red">
+              Year <br />
+              <span className="my-car-sign-white">{this.props.year}</span>
+            </p>
+            <p className="my-car-sign-red">
+              Odometer <br />
+              <span className="my-car-sign-white">{this.props.odometer}</span>
+            </p>
           </div>
 
           <div>

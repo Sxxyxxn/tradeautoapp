@@ -6,7 +6,6 @@ import SingleCar from "./SingleCar";
 import Comments from "./Comments";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "@reach/router";
-// import BottomSingleCar from "./BottomSingleCar";
 
 export default class ViewCarDetails extends Component {
   constructor(props) {
@@ -65,6 +64,7 @@ export default class ViewCarDetails extends Component {
             </div>
           );
         })}
+        <button className="red-btn">Book a test drive</button>
       </div>
     );
   }
