@@ -10,8 +10,16 @@ import "../css_ella/globalnav.css";
 
 export default class GlobalNav extends Component {
   render() {
+    let classesToAdd = "sticky-container-e";
+
+    let currentLocation = this.props.location.pathname || "";
+    // check our paths
+    if (currentLocation === "/" || currentLocation === "/login") {
+      classesToAdd += " hide-footer";
+    }
+
     return (
-      <nav className="sticky-container-e">
+      <nav className={classesToAdd}>
         <ul className="sticky-list-e">
           <li>
             <Link to="/all-cars">

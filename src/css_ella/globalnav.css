@@ -24,3 +24,8 @@
   position: sticky;
   bottom: 0;
 }
+
+/* apply this class when we don't want footer to show */
+.hide-footer {
+  display: none;
+}

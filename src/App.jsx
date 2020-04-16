@@ -1,9 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Router } from "@reach/router";
+import { Router, Location, navigate } from "@reach/router";
 import Axios from "axios";
 import uuid from "react-uuid";
-import { navigate } from "@reach/router";
 import { Button } from "reactstrap";
 import "./css/shared.css";
 
@@ -42,7 +41,9 @@ export default class App extends React.Component {
           <MyCarDetails path="/my-car-details/:id" />
           <EditedCarDetails path="/edited-car-details/:id" />
         </Router>
-        <FooterNav />
+        <Location>
+          {({ location }) => <FooterNav location={location} />}
+        </Location>
       </React.Fragment>
     );
   }
