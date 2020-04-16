@@ -14,7 +14,7 @@ import { FiPhone } from "react-icons/fi";
 import { FiMail } from "react-icons/fi";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
 import { Link } from "@reach/router";
-// import Comments from "../components_ella/Comments";
+import Comments from "../components_ella/Comments";
 
 export default class MyCarDetails extends Component {
   constructor(props) {
@@ -107,7 +107,7 @@ export default class MyCarDetails extends Component {
             />
           </div>
 
-          <div className="new-t">
+          <div className="titles-container-t ">
             <div className="row-t car-titles-container-t">
               <h1 className="make-big-title-t"> {this.state.car.make} </h1>
               <h1 className="model-big-title-t"> {this.state.car.model} </h1>
@@ -143,14 +143,11 @@ export default class MyCarDetails extends Component {
             </div>
           </div>
 
-          {/* {this.state.car.map((car, i) => {
+          {/* {this.state.car.comments.map((car, i) => {
             return (
               <div key={Date.now()}>
-                <Comments comments={car.comments} />
-
-                
+                <Comments comments={this.state.car.comments} />
               </div>
-              
             );
           })} */}
 

@@ -86,23 +86,26 @@ export default class MyCarDetails extends Component {
               alt="my-car-image"
             />
           </div>
-          <div className="row-t car-titles-container-t">
-            <h1 className="make-big-title-t"> {this.state.car.make} </h1>
-            <h1 className="model-big-title-t"> {this.state.car.model} </h1>
 
-            <h1 className="price-big-title-t"> ${this.state.car.price}</h1>
-          </div>
+          <div className="titles-container-t ">
+            <div className="row-t car-titles-container-t">
+              <h1 className="make-big-title-t"> {this.state.car.make} </h1>
+              <h1 className="model-big-title-t"> {this.state.car.model} </h1>
 
-          <div className="row-t year-odometer-container-t">
-            <div className="year-conainer-t">
-              <span className="my-car-sign-red">Year </span> <br />
-              <span className="my-car-sign-white">{this.state.car.year}</span>
+              <h1 className="price-big-title-t"> ${this.state.car.price}</h1>
             </div>
-            <div className="odometer-conainer-t">
-              <span className="my-car-sign-red">Odometer </span> <br />
-              <span className="my-car-sign-white">
-                {this.state.car.odometer}km
-              </span>
+
+            <div className="row-t year-odometer-container-t">
+              <div className="year-conainer-t">
+                <span className="my-car-sign-red">Year </span> <br />
+                <span className="my-car-sign-white">{this.state.car.year}</span>
+              </div>
+              <div className="odometer-conainer-t">
+                <span className="my-car-sign-red">Odometer </span> <br />
+                <span className="my-car-sign-white">
+                  {this.state.car.odometer}km
+                </span>
+              </div>
             </div>
           </div>
           <div className="row-t user-details-container-horisontal-t">
