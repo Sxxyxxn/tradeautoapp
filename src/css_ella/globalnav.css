@@ -16,6 +16,10 @@
   font-size: 0.9rem;
 }
 
+.sticky-list-e .active {
+  background-color: red;
+}
+
 .sticky-list-e li span {
   margin-top: 0.3rem;
 }
