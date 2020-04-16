@@ -82,8 +82,8 @@ export default class MyProfile extends Component {
   render() {
     return (
       <div className="main-content-t">
+        <h1 className="header">My Profile</h1>
         <div className="user-content-t">
-          <h1 className="header">My Profile</h1>
           <div className="user-details-container-t  main-redline-input">
             <div className=" user-image-wrapper-t">
               <img src={picture_women} alt="women-img" />

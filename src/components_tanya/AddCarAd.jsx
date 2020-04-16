@@ -88,16 +88,6 @@ export default class AddCarAd extends Component {
     return (
       <div className="main-content-t">
         <h1 className="header">Sell Your Car</h1>
-
-        <div className="header-w-arrow">
-          <h1>
-            <IoIosArrowBack />
-          </h1>
-          <h1>Sell your car</h1>
-          <h1 style={{ visibility: "hidden" }}>
-            <IoIosArrowBack />
-          </h1>
-        </div>
         <h2 className="vehicle-details-title">Vehicle details</h2>
         {/* <h2 className="vehicle-details ">Vehicle Details</h2> */}
         <div className="card form-container-t">
