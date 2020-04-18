@@ -7,7 +7,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import "../css/shared.css";
 import "../css_tanya/style.css";
 import "../css_tanya/addcar_form.css";
-
+import default_image from "../images/default_img.png";
 import "../css_tanya/my_profile.css";
 import CarMakeDropdown from "./CarMakeDropdown";
 import YearDropdown from "./YearDropdown";
@@ -19,7 +19,12 @@ export default class AddCarAd extends Component {
     this.state = {
       id: Date.now(),
       selectedMake: "Select Make",
-      selectedYear: "Select  Year",
+      selectedYear: "Select Year",
+      previewURL: "",
+      filename: "",
+      price: "",
+      model: "",
+      odometer: "",
     };
   }
 
@@ -59,6 +64,24 @@ export default class AddCarAd extends Component {
       });
   };
 
+  onFileUpdate = (e) => {
+    if (e.target.files.length == 0) return;
+    console.log(e.target.files[0].name);
+    this.setState({
+      filename: e.target.files[0].name,
+      //create address for img:
+      previewURL: window.URL.createObjectURL(e.target.files[0]),
+    });
+  };
+
+  changePrice = (e) => {
+    this.setState({ price: e.target.value });
+  };
+
+  changeModel = (e) => {
+    this.setState({ model: e.target.value });
+  };
+
   // uploadToExpress = (e) => {
   //   e.preventDefault();
   //   // grab reference to the form data
@@ -88,6 +111,15 @@ export default class AddCarAd extends Component {
     return (
       <div className="main-content-t">
         <h1 className="header">Sell Your Car</h1>
+        <div className="header-w-arrow">
+          <h1>
+            <IoIosArrowBack />
+          </h1>
+          <h1>Sell your car</h1>
+          <h1 style={{ visibility: "hidden" }}>
+            <IoIosArrowBack />
+          </h1>
+        </div>
         <h2 className="vehicle-details-title">Vehicle details</h2>
         {/* <h2 className="vehicle-details ">Vehicle Details</h2> */}
         <div className="card form-container-t">
@@ -129,6 +161,7 @@ export default class AddCarAd extends Component {
                   type="text"
                   name="model"
                   placeholder="Model"
+                  onChange={this.changeModel}
                 />
               </div>
               <div className="main-redline-input md-form">
@@ -149,7 +182,7 @@ export default class AddCarAd extends Component {
                   // type="number"
                   name="price"
                   placeholder="Price"
-                  onChange={this.separateNumber}
+                  onChange={this.changePrice}
                 />
               </div>
               <div className="  md-form">
@@ -161,15 +194,60 @@ export default class AddCarAd extends Component {
                 />
               </div>
               <input id="id" type="hidden" name="id" value={this.state.id} />
-              <div className=" main-redline-input md-form image-upload-container-t">
+              <div className=" main-redline-input md-form image-upload-container-t ">
+                <label
+                  style={{ fontSize: "1.5rem", color: "gray" }}
+                  htmlFor="files"
+                >
+                  <div className="caption-and-img-container-t">
+                    <div className="select-image-caption-t">Select Image:</div>
+
+                    {/* if first statement is true it will render second part */}
+                    {this.state.filename == "" && (
+                      <div className="default-image-wrapper-t">
+                        <img src={default_image} />
+                      </div>
+                    )}
+                    {/* if first statement is false it will not render second part */}
+                    {this.state.filename != "" && (
+                      <div className="image-for-input-wrapper-t">
+                        <img
+                          // style={{ height: 100 }}
+                          src={this.state.previewURL}
+                          alt="image"
+                        />
+                        {/* {this.state.filename} */}
+                      </div>
+                    )}
+                  </div>
+                </label>
+
                 <input
+                  className="hidden-input-t"
+                  id="files"
+                  style={{ visibility: "hidden" }}
+                  name="car_image"
+                  type="file"
+                  onChange={this.onFileUpdate}
+                ></input>
+
+                {/* <input
                   type="file"
                   name="car_image"
                   id="car_image"
                   // onChange={this.uploadToExpress}
-                />
+                /> */}
               </div>
-              <Button className=" red-btn-t  btn-next-t" type="submit">
+              <Button
+                disabled={
+                  this.state.filename == "" ||
+                  this.state.selectedMake == "Select Make" ||
+                  this.state.selectedYear == "Select Year" ||
+                  this.state.price == ""
+                }
+                className=" red-btn-t  btn-next-t"
+                type="submit"
+              >
                 Next
               </Button>
             </form>
