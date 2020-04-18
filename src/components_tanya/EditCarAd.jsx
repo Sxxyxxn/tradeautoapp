@@ -20,6 +20,8 @@ export default class EditCarAd extends Component {
       isLoaded: false,
       selectedMake: "",
       selectedYear: "",
+      previewURL: "",
+      filename: "",
     };
     this.formRef = React.createRef();
   }
@@ -87,6 +89,16 @@ export default class EditCarAd extends Component {
   //   }
   // };
 
+  onFileUpdate = (e) => {
+    if (e.target.files.length == 0) return;
+    console.log(e.target.files[0].name);
+    this.setState({
+      filename: e.target.files[0].name,
+      //create address for img:
+      previewURL: window.URL.createObjectURL(e.target.files[0]),
+    });
+  };
+
   render() {
     // make a local variable from the state.car
     const { car_image } = this.state.car;
@@ -98,13 +110,13 @@ export default class EditCarAd extends Component {
       //   this.state.isLoaded === false && <span>loading</span>;
       // }
       <div className="main-content-t">
-        <h2 className="vehicle-details-title">Edit vehicle details</h2>
+        <h1 className="header">Edit details</h1>
+        <h2 className="vehicle-details-title">Vehicle details</h2>
 
         <div className="card form-container-t">
           <div className="card-body   pt-0">
             <form ref={this.formRef} onSubmit={this.EditCarAd}>
-              <div className=" main-redline-input  ">
-                {/* <label>Year</label> */}
+              <div className=" main-redline-input edit-year-container-t  ">
                 <input
                   id="year"
                   type="hidden"
@@ -163,10 +175,9 @@ export default class EditCarAd extends Component {
                   name="price"
                   placeholder="Price"
                   defaultValue={this.state.car.price}
-                  onChange={this.separateNumber}
                 />
               </div>
-              <div className="  md-form">
+              <div className="md-form">
                 <input
                   id="seller_name"
                   type="hidden"
@@ -176,43 +187,64 @@ export default class EditCarAd extends Component {
               </div>
               <input id="id" type="hidden" name="id" value={this.props.id} />
               <div className=" main-redline-input md-form image-upload-container-t">
-                {/* <input
-                  type="file"
-                  name="car_image"
-                  id="car_image"
-                  onChange={this.uploadToExpress}
-                /> */}
-                {/*                 
-                <input
-                  type="hidden"
-                  name="car_image"
-                  id="car_image"
-                  value={car_image}
-                  onChange={this.uploadToExpress}
-                /> */}
-
-                {/* <button onClick={this.uploadToExpress} className="add-button">
-                  Upload picture
-                </button> */}
-                <figure style={{ color: "snow" }}>
-                  {/* <img className=""
+                {/* <figure style={{ color: "snow" }}>
+                  <img
+                    className=""
                     src={image_path}
                     display="none"
                     width="100px"
-                    height="100px"
                     alt="current car"
-                  /> */}
+                  />
                   <figcaption className="image-name-t">
-                    {" "}
-                    Current pic:{car_image}
+                    Current image:{car_image}
                   </figcaption>
-                </figure>
+                </figure> */}
+
+                <label
+                  style={{ fontSize: "1.5rem", color: "gray" }}
+                  htmlFor="files"
+                >
+                  <div className="caption-and-img-container-t">
+                    <div className="select-image-caption-t">Select Image:</div>
+
+                    {this.state.filename == "" && (
+                      <div className="image-for-input-wrapper-t">
+                        <img src={image_path} />
+                        {/* <figcaption className="image-name-t">
+                          {car_image}
+                        </figcaption> */}
+                      </div>
+                    )}
+                    {this.state.filename != "" && (
+                      <div className="image-for-input-wrapper-t">
+                        <img
+                          // style={{ height: 100 }}
+                          src={this.state.previewURL}
+                          alt="image"
+                        />
+                        {/* {this.state.filename} */}
+                      </div>
+                    )}
+                  </div>
+                </label>
+
+                <input
+                  className="hidden-input-t"
+                  id="files"
+                  style={{ visibility: "hidden" }}
+                  name="car_image"
+                  type="file"
+                  onChange={this.onFileUpdate}
+                  defaultValue={car_image}
+                ></input>
+
+                {/* 
                 <input
                   type="file"
                   id="car_image"
                   name="car_image"
                   defaultValue={car_image}
-                ></input>
+                ></input> */}
               </div>
               <Button
                 className="red-btn-t"

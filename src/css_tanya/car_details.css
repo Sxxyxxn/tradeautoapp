@@ -5,16 +5,22 @@
 }
 
 .my-car-image-wrapper-t {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   background-color: #fffffc;
   border-radius: 1rem;
   padding: 0.1rem 1.5rem;
 }
 
-.my-car-image-wrapper-t > img {
+.my-car-image-wrapper-t>img {
   max-width: 100%;
-  width: 255px;
+  width: 20rem;
 }
+
+.titles-container-t {
+  display: flex;
+  flex-direction: column;
+}
+
 
 .make-big-title-t {
   padding-right: 0.7rem;
@@ -23,7 +29,7 @@
 }
 
 .car-titles-container-t {
-  margin-right: 8rem;
+
   margin-top: 5%;
   display: flex;
   justify-content: flex-start;
@@ -43,7 +49,7 @@
 
 .year-odometer-container-t {
   margin-top: 5%;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .odometer-conainer-t {
@@ -54,7 +60,7 @@
   padding-right: 11rem;
 }
 
-.user-small-image-wrapper-t > img {
+.user-small-image-wrapper-t>img {
   max-width: 100%;
   width: 65px;
   border-radius: 120px;
@@ -67,7 +73,7 @@
   /* margin-left: 4.5rem; */
 }
 
-.user-details-container-horisontal-t > h1 {
+.user-details-container-horisontal-t>h1 {
   font-weight: 600;
   width: 118px;
   margin-top: 2.5rem;
@@ -75,7 +81,7 @@
   margin-left: 1.5rem;
 }
 
-.row-t > .edit-btn-bigger {
+.row-t>.edit-btn-bigger {
   margin-right: 2rem;
 }
 
@@ -117,6 +123,7 @@
   margin-top: 1.5rem;
   padding-right: 1.3rem;
 }
+
 .plane-icon-wrapper-t {
   color: #d92546;
   margin-top: 1.7rem;
