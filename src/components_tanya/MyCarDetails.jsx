@@ -20,7 +20,9 @@ export default class MyCarDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      car: {},
+      car: {
+        comments: [],
+      },
       modal: false,
       deleteId: "",
     };
@@ -55,7 +57,6 @@ export default class MyCarDetails extends Component {
 
     if (response == "true") {
       Axios.delete(`${UTILS.cars_url}/${this.state.deleteId}`).then((res) => {
-        console.log(res.data);
         this.setState({ modal: false });
         this.gotoMyProfile();
       });
@@ -94,7 +95,7 @@ export default class MyCarDetails extends Component {
                 <IoIosArrowBack color="#d92546" />
               </Link>
             </h1>
-            <h1>Sell Your Car</h1>
+            <h1>Selling Car Details</h1>
             <h1 style={{ visibility: "hidden" }}>
               <IoIosArrowBack />
             </h1>
@@ -143,13 +144,10 @@ export default class MyCarDetails extends Component {
             </div>
           </div>
 
-          {/* {this.state.car.comments.map((car, i) => {
-            return (
-              <div key={Date.now()}>
-                <Comments comments={this.state.car.comments} />
-              </div>
-            );
-          })} */}
+          <Comments
+            className="comments-container-t"
+            comments={this.state.car.comments}
+          />
 
           <div className="row-t buttons-container-t">
             <Button

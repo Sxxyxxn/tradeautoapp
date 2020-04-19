@@ -22,6 +22,8 @@ import SearchCars from "./components_tanya/SearchCars";
 import FilteredCars from "./components_tanya/FilteredCars";
 import EditedCarDetails from "./components_tanya/EditedCarDetails";
 import LoginPage from "./components_tanya/LoginPage";
+import BookTestDrive from "./components_tanya/BookTestDrive";
+import BookingDEtails from "./components_tanya/BookingDetails";
 
 export default class App extends React.Component {
   render() {
@@ -39,6 +41,8 @@ export default class App extends React.Component {
           <MyProfile path="/my-profile" />
           <MyCarDetails path="/my-car-details/:id" />
           <EditedCarDetails path="/edited-car-details/:id" />
+          <BookTestDrive path="/book-test-drive/:id" />
+          <BookingDEtails path="/booking-details/:id" />
         </Router>
         <Location>
           {({ location }) => <FooterNav location={location} />}
