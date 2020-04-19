@@ -1,0 +1,20 @@
+ .btn-cofirm-t {
+     margin-top: 50%;
+ }
+
+
+ .date-time-container-t {
+     border-bottom: 2px solid #b42f47;
+     padding-bottom: 1.5rem;
+     width: 100%;
+ }
+
+ .time-container-t {
+     padding-top: 1.5rem;
+ }
+
+ .date-time-container-t span {
+
+     padding-right: 1rem;
+
+ }
