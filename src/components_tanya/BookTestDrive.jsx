@@ -33,8 +33,17 @@ export default class BookTestDrive extends Component {
     });
   }
   gotoBookingDetails = (e) => {
-    var bookingDate = this.state.bookingDate;
-    navigate(`/booking-details/${this.props.id}`);
+    navigate(`/booking-details/${this.props.id}/${this.state.bookingDate}`);
+  };
+
+  addMonths = (date, months) => {
+    // from SO, mostly...
+    var d = date.getDate();
+    date.setMonth(date.getMonth() + months);
+    if (date.getDate() !== d) {
+      date.setDate(0);
+    }
+    return date;
   };
 
   render() {
@@ -65,6 +74,10 @@ export default class BookTestDrive extends Component {
               onChange={this.handleChange}
               showTimeSelect
               dateFormat="Pp"
+              minDate={new Date()}
+              maxDate={this.addMonths(new Date(), 3)}
+              minTime={new Date().setHours(8)}
+              maxTime={new Date().setHours(17)}
               placeholderText="Select a booking date"
             />
           </div>

@@ -42,7 +42,7 @@ export default class App extends React.Component {
           <MyCarDetails path="/my-car-details/:id" />
           <EditedCarDetails path="/edited-car-details/:id" />
           <BookTestDrive path="/book-test-drive/:id" />
-          <BookingDEtails path="/booking-details/:id" />
+          <BookingDEtails path="/booking-details/:id/:bookingDate" />
         </Router>
         <Location>
           {({ location }) => <FooterNav location={location} />}

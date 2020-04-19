@@ -15,7 +15,22 @@ export default class BookingDetails extends Component {
     super(props);
     this.state = {
       car: {},
+      date: "",
+      time: "",
     };
+
+    // inside the constructor we can set the state directly
+    // outside we use setState only.
+    if (typeof this.props.bookingDate === "string") {
+      let temp = this.props.bookingDate.split(" ");
+      let dateStr = `${temp[0]}, ${temp[1]} ${temp[2]}, ${temp[3]}`;
+      let timeStr = `${temp[4]}`;
+      console.log("dateStr ", dateStr);
+      console.log("timeStr ", timeStr);
+
+      this.state.date = dateStr;
+      this.state.time = timeStr;
+    }
   }
 
   componentDidMount() {
@@ -56,13 +71,13 @@ export default class BookingDetails extends Component {
             <div>
               {" "}
               <span>Date:</span>
-              {/* <div>Date:{this.props.selected}</div> */}
+              <div>Date: {this.state.date}</div>
             </div>
           </div>
           <div className="date-time-container-t">
             <div className=" time-container-t">
               <span>Time:</span>
-              {/* <div>Date:{this.props.}</div> */}
+              <div>Date: {this.state.time}</div>
             </div>
           </div>
 
