@@ -51,15 +51,6 @@ input#carimage {
   color: white;
 }
 
-/* .year-container-t button.dropdown-toggle.btn.btn-secondry .dropdown-toggle::after {
-    margin-left: 13.4em !important;
-}
-
-*/
-.year-container-t .dropdown-toggle::after {
-  margin-left: 11em !important;
-}
-
 /* input image field styling: */
 .image-upload-container-t {
   padding: 0rem;
@@ -98,6 +89,16 @@ input#carimage {
   margin-right: 1.5rem;
 }
 
-.edit-year-container-t .dropdown-toggle::after {
-  margin-left: 13.7em !important;
+form > .year-container-t {
+  padding-left: 8px;
+}
+.year-container-t .dropdown-toggle::after {
+  margin-left: 0 !important;
+  top: 50%;
+  left: 95%;
+  position: absolute;
+}
+
+.year-container-t .dropdown > button {
+  text-align: left;
 }

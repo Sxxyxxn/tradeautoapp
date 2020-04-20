@@ -147,6 +147,23 @@ button {
   padding: 1.5rem;
 }
 
+.main-redline-input > input {
+  background-color: #1d1f2b;
+}
+
 .user-title-red {
   color: #b42f47;
+}
+
+form {
+  background-color: #1d1f2b;
+}
+
+::placeholder {
+  color: #fffffc;
+  opacity: 1;
+}
+
+textarea {
+  background-color: #1d1f2b;
 }
