@@ -16,12 +16,8 @@
   font-size: 0.9rem;
 }
 
-li .footer-item * {
+li .footer-item-red * {
   color: #b42f47;
-}
-
-.sticky-list-e .active {
-  background-color: red;
 }
 
 .sticky-list-e li span {

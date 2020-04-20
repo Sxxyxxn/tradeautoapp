@@ -23,16 +23,16 @@ export default class GlobalNav extends Component {
       <nav className={classesToAdd}>
         <ul className="sticky-list-e">
           <li>
-            <div className={pathname == "/all-cars" ? "footer-item-red" : ""}>
+            <div className={pathname === "/all-cars" ? "footer-item-red" : ""}>
               <Link to="/all-cars">
-                <AiOutlineHome color="#d92546" size={33} />
+                <AiOutlineHome size={33} />
                 <span>Home</span>
               </Link>
             </div>
           </li>
           <li>
             <div
-              className={pathname == "/search-cars" ? "footer-item-red" : ""}
+              className={pathname === "/search-cars" ? "footer-item-red" : ""}
             >
               <Link to="/search-cars">
                 <AiOutlineSearch size={32} />
@@ -42,7 +42,7 @@ export default class GlobalNav extends Component {
           </li>
 
           <li>
-            <div className={pathname == "/add-car" ? "footer-item-red" : ""}>
+            <div className={pathname === "/add-car" ? "footer-item-red" : ""}>
               <Link to="/add-car">
                 <AiOutlineCar size={32} />
                 <span>Sell</span>
@@ -50,7 +50,9 @@ export default class GlobalNav extends Component {
             </div>
           </li>
           <li>
-            <div className={pathname == "/my-profile" ? "footer-item-red" : ""}>
+            <div
+              className={pathname === "/my-profile" ? "footer-item-red" : ""}
+            >
               <Link to="/my-profile">
                 <AiOutlineUser size={32} />
                 <span>Profile</span>
