@@ -6,7 +6,7 @@ import SingleCar from "./SingleCar";
 import Comments from "./Comments";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link } from "@reach/router";
-
+import { navigate } from "@reach/router";
 export default class ViewCarDetails extends Component {
   constructor(props) {
     super(props);
@@ -31,6 +31,9 @@ export default class ViewCarDetails extends Component {
         console.log("error = ", error);
       }
     );
+  };
+  gotoBookTestDrive = (e) => {
+    navigate(`/book-test-drive/${this.props.id}`);
   };
 
   render() {
@@ -64,7 +67,9 @@ export default class ViewCarDetails extends Component {
             </div>
           );
         })}
-        <button className="red-btn">Book a test drive</button>
+        <button onClick={this.gotoBookTestDrive} className="red-btn">
+          Book a test drive
+        </button>
       </div>
     );
   }

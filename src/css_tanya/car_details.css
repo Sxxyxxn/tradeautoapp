@@ -69,7 +69,7 @@
 .user-details-container-horisontal-t {
   display: flex;
   flex-direction: row;
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
   /* margin-left: 4.5rem; */
 }
 
@@ -128,4 +128,9 @@
   color: #d92546;
   margin-top: 1.7rem;
   font-size: 2.7rem;
+}
+
+.my-car-details-container-t .showing-comment-container-e {
+  margin-bottom: 2rem;
+  /* margin-left: 3.9rem; */
 }

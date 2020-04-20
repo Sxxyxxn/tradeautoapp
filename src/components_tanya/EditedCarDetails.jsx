@@ -12,12 +12,14 @@ import "../css_tanya/car_details.css";
 import { FiPhone } from "react-icons/fi";
 import { FiMail } from "react-icons/fi";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
-
+import Comments from "../components_ella/Comments";
 export default class MyCarDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      car: {},
+      car: {
+        comments: [],
+      },
       modal: false,
       deleteId: "",
     };
@@ -79,6 +81,7 @@ export default class MyCarDetails extends Component {
   render() {
     return (
       <div className="main-content-t">
+        <h1 className="header">Selling Car Details</h1>
         <div className="my-car-details-container-t">
           <div className=" row-t my-car-image-wrapper-t">
             <img
@@ -123,6 +126,10 @@ export default class MyCarDetails extends Component {
             </div>
           </div>
 
+          <Comments
+            className="comments-container-t"
+            comments={this.state.car.comments}
+          />
           <div className="row-t buttons-container-t">
             <Button
               className="edit-btn-big-t"
