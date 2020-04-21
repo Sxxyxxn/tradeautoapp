@@ -1,0 +1,14 @@
+.not-found-container-t {
+    margin-top: 10rem;
+}
+
+.not-found-container-t {
+    align-items: center;
+}
+
+
+.notfound-row-t {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
