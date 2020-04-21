@@ -104,10 +104,10 @@ export default class MyProfile extends Component {
           </div>
           {this.state.cars
             .filter((car) => car.seller_name == "user")
-            .map((car) => {
+            .map((car, i) => {
               console.log(car.car_image);
               return (
-                <div className="row-t">
+                <div className="row-t" key={i}>
                   <div className="column-t  small-image-car-wrapper">
                     <img
                       src={`http://localhost:4000/assets/${car.car_image}`}
