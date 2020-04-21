@@ -3,35 +3,13 @@ import Axios from "axios";
 import * as UTILS from "../utils";
 
 export default class Comments extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { comments: [] };
-    // comments arrive as props, from parent component
-    console.log(this.props);
-  }
-
   removeComment = (e) => {
     var commentid = e.target.getAttribute("data-id");
     Axios.delete(`${UTILS.comments_url}/${commentid}`).then((res) => {
-      console.log(res.data);
       console.log("Deleted");
-      this.refreshData();
+      // call the parent
+      this.props.refresh();
     });
-  };
-
-  componentDidMount() {
-    this.refreshData();
-  }
-
-  refreshData = () => {
-    Axios.get(`${UTILS.comments_url}`).then(
-      (res) => {
-        this.setState({ comments: res.data });
-      },
-      (error) => {
-        console.log("error = ", error);
-      }
-    );
   };
 
   render() {
