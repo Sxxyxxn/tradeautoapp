@@ -88,7 +88,7 @@
 .buttons-container-t {
   display: flex;
 
-  margin-bottom: 3rem;
+  margin-bottom: 1.7rem;
 }
 
 .red-btn-t {
@@ -133,4 +133,8 @@
 .my-car-details-container-t .showing-comment-container-e {
   margin-bottom: 2rem;
   /* margin-left: 3.9rem; */
+}
+
+.comments-container-t {
+  width: 96%;
 }

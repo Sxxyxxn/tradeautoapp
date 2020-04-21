@@ -3,11 +3,7 @@ import Axios from "axios";
 import * as UTILS from "../utils";
 import { Button } from "reactstrap";
 import { navigate } from "@reach/router";
-// import EditButton from "./EditButton";
 import picture_women from "../images/women.png";
-import "bootstrap/dist/css/bootstrap.css";
-import "../css/shared.css";
-import "../css_tanya/style.css";
 import "../css_tanya/car_details.css";
 import { FiPhone } from "react-icons/fi";
 import { FiMail } from "react-icons/fi";
@@ -41,7 +37,6 @@ export default class MyCarDetails extends Component {
     Axios.delete(`${UTILS.cars_url}/${carid}`).then(
       (res) => {
         console.log("DELETED");
-        //navigate("/all-cars");
       },
       (error) => {
         console.log("error = ", error);
@@ -122,14 +117,14 @@ export default class MyCarDetails extends Component {
             </div>
             <div className="plane-icon-wrapper-t">
               <FiMail />
-              {/* <img src="" alt="plane" /> */}
             </div>
           </div>
-
-          <Comments
-            className="comments-container-t"
-            comments={this.state.car.comments}
-          />
+          <div className="row-t comments-container-t">
+            <Comments
+              className="comments-container-t"
+              comments={this.state.car.comments}
+            />
+          </div>
           <div className="row-t buttons-container-t">
             <Button
               className="edit-btn-big-t"
@@ -147,11 +142,7 @@ export default class MyCarDetails extends Component {
             </Button>
           </div>
           <div className="row-m button-container">
-            <Button
-              // id="upload-btn-t"
-              className="red-btn-t"
-              onClick={this.gotoMyProfile}
-            >
+            <Button className="red-btn-t" onClick={this.gotoMyProfile}>
               Go to Profile
             </Button>
           </div>
