@@ -17,34 +17,47 @@ export default class GlobalNav extends Component {
     if (currentLocation === "/" || currentLocation === "/login") {
       classesToAdd += " hide-footer";
     }
-
+    var pathname = this.props.location.pathname;
+    console.log(this.props);
     return (
       <nav className={classesToAdd}>
         <ul className="sticky-list-e">
           <li>
-            <Link to="/all-cars">
-              <AiOutlineHome size={33} />
-              <span>Home</span>
-            </Link>
+            <div className={pathname === "/all-cars" ? "footer-item-red" : ""}>
+              <Link to="/all-cars">
+                <AiOutlineHome size={33} />
+                <span>Home</span>
+              </Link>
+            </div>
           </li>
           <li>
-            <Link to="/search-cars">
-              <AiOutlineSearch size={32} />
-              <span>Search</span>
-            </Link>
+            <div
+              className={pathname === "/search-cars" ? "footer-item-red" : ""}
+            >
+              <Link to="/search-cars">
+                <AiOutlineSearch size={32} />
+                <span>Search</span>
+              </Link>
+            </div>
           </li>
 
           <li>
-            <Link to="/add-car">
-              <AiOutlineCar size={32} />
-              <span>Sell</span>
-            </Link>
+            <div className={pathname === "/add-car" ? "footer-item-red" : ""}>
+              <Link to="/add-car">
+                <AiOutlineCar size={32} />
+                <span>Sell</span>
+              </Link>
+            </div>
           </li>
           <li>
-            <Link to="/my-profile">
-              <AiOutlineUser size={32} />
-              <span>Profile</span>
-            </Link>
+            <div
+              className={pathname === "/my-profile" ? "footer-item-red" : ""}
+            >
+              <Link to="/my-profile">
+                <AiOutlineUser size={32} />
+                <span>Profile</span>
+              </Link>
+            </div>
           </li>
         </ul>
       </nav>

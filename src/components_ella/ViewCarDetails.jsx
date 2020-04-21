@@ -63,7 +63,7 @@ export default class ViewCarDetails extends Component {
                 commentAdded={this.commentAdded}
               />
 
-              <Comments comments={car.comments} />
+              <Comments refresh={this.getData} comments={car.comments} />
             </div>
           );
         })}

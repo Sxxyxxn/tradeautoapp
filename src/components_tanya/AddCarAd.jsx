@@ -85,7 +85,6 @@ export default class AddCarAd extends Component {
     return (
       <div className="main-content-t">
         <h1 className="header">Sell Your Car</h1>
-
         <h2 className="vehicle-details-title">Vehicle details</h2>
 
         <div className="card form-container-t">

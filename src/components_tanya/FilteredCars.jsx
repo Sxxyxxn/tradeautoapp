@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import Axios from "axios";
 import * as UTILS from "../utils";
 import SingleCarAsCard from "../components_ella/SingleCarAsCard";
+import CarNotFound from "../components_tanya/CarNotFound";
 import "../css_ella/home.css";
 import { Link } from "@reach/router";
 import { IoIosArrowBack } from "react-icons/io";
-import CarNotFound from "../components_tanya/CarNotFound";
 
 export default class FilteredCars extends Component {
   constructor(props) {
@@ -60,6 +60,17 @@ export default class FilteredCars extends Component {
     );
   }
 
+  checkForSearchTerm = (arr) => {
+    let count = 0;
+    arr.forEach((item) => {
+      if (item.make === this.props.location.state.make) {
+        count++;
+      }
+    });
+
+    return count;
+  };
+
   render() {
     var make = this.props.location.state.make;
     var sortHigh = this.props.location.state.sortHigh;
@@ -86,9 +97,11 @@ export default class FilteredCars extends Component {
         {this.state.result === false ? <CarNotFound /> : null}
 
         {this.state.cars
-          .filter((car) => car.make == make)
+          .filter((car) => car.make === make)
           .sort((car1, car2) =>
-            sortHigh == true ? car2.price - car1.price : car1.price - car2.price
+            sortHigh === true
+              ? car2.price - car1.price
+              : car1.price - car2.price
           )
           .map((car, i) => {
             return (
