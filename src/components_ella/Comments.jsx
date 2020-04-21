@@ -26,13 +26,15 @@ export default class Comments extends Component {
                   <p>{item.comment}</p>
                   {/* <p>model: {item.car_name}</p> */}
                 </div>
-                <button
-                  onClick={this.removeComment}
-                  data-id={item._id}
-                  className="delete-btn-small-e"
-                >
-                  Delete
-                </button>
+                <div>
+                  <button
+                    onClick={this.removeComment}
+                    data-id={item._id}
+                    className="delete-btn-small-e"
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             );
           })}
