@@ -1,20 +1,7 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
-import Axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import * as UTILS from "../utils";
 import { navigate } from "@reach/router";
-// import React, { useState } from "react";
-import {
-  Dropdown,
-  DropdownMenu,
-  DropdownItem,
-  DropdownToggle,
-  UncontrolledDropdown,
-} from "reactstrap";
-import "../css/shared.css";
-import "../css_tanya/style.css";
-import "../css_tanya/addcar_form.css";
 import "../css_tanya/search.css";
 import CarMakeDropdown from "./CarMakeDropdown";
 
@@ -29,7 +16,7 @@ export default class SearchCars extends Component {
 
   gotoFilterdCars = (evt) => {
     evt.preventDefault();
-    // var carid = evt.target.getAttribute("data-id");
+
     var make = document.querySelector("#make").value;
     var sortHigh = document.querySelector("#sorthigh").checked;
     var sortLow = document.querySelector("#sortlow").unchecked;
@@ -106,13 +93,7 @@ export default class SearchCars extends Component {
                 <label>Sort low to high</label>
               </div>
 
-              {/* <input id="id" type="hidden" name="id" value={this.state.id} /> */}
-
-              <Button
-                className=" search-btn-t red-btn-t"
-                type="submit"
-                //   data-id={cars.id}
-              >
+              <Button className=" search-btn-t red-btn-t" type="submit">
                 Search
               </Button>
             </form>

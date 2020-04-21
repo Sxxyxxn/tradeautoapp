@@ -1,77 +1,80 @@
 .check-box-input-t {
-    color: red;
-
+  color: red;
 }
 
 form .search-btn-t {
-    margin-top: 25rem;
+  margin-top: 62%;
 }
 
-
 .main-redline-input>label {
-    color: #fffffc;
-    opacity: 100;
-    padding-left: 1.5rem;
+  color: #fffffc;
+  opacity: 100;
+  padding-left: 1.5rem;
 }
 
 .main-redline-input>input {
-    background-color: #1d1f2b;
+  background-color: #1d1f2b;
 }
 
 /* ____________select style_______________ */
 .select-t {
-    width: 240px;
-    background-color: #1d1f2b;
-
+  width: 240px;
+  background-color: #1d1f2b;
 }
 
 .dropdown>button {
-    background-color: #1d1f2b;
-    width: 240px;
-    border: none;
-    font-size: 1.6rem;
-    padding: 0rem 0.75rem;
+  background-color: #1d1f2b;
+  width: 240px;
+  border: none;
+  font-size: 1.6rem;
+  padding: 0rem 0.75rem;
+  text-align: left;
 }
 
-
 .dropdown-toggle::after {
-    display: inline-block;
-    margin-left: 10.4em;
-    vertical-align: 0.255em;
-    content: "";
-    border-top: 0.3em solid;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0;
-    border-left: 0.3em solid transparent;
-    /* font-size: 2.3rem; */
+  display: inline-block;
+  margin-left: 0;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  top: 50%;
+  left: 95%;
+  position: absolute;
+  /* font-size: 2.3rem; */
+}
+
+form>.container-t {
+  padding-left: 8px;
 }
 
 .container-t {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    width: 85%;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 85%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .dropdown-item {
-    color: white;
-    font-size: 1.4rem;
+  color: white;
+  font-size: 1.4rem;
 }
 
-
 .dropdown-header {
-    color: white;
-    font-size: 1.4rem;
+  color: white;
+  font-size: 1.4rem;
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active,
 .btn-secondary:not(:disabled):not(.disabled).active,
 .show>.btn-secondary.dropdown-toggle {
-    color: #fff;
-    background-color: #1d1f2b;
-    border-color: #1d1f2b;
+  color: #fff;
+  background-color: #1d1f2b;
+  border-color: #1d1f2b;
 }
