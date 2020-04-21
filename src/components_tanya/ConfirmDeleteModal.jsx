@@ -15,7 +15,7 @@ export default class ConfirmDeleteModal extends Component {
         <ModalFooter>
           <Button
             data-response={true}
-            className="modal-delete-btn-t"
+            className="modal-red-btn-t"
             onClick={closeModal}
           >
             Delete
