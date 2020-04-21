@@ -30,7 +30,6 @@ export default class CarMakeDropdown extends Component {
           <DropdownItem data-make="Mazda">Mazda</DropdownItem>
           <DropdownItem data-make="Mercedes">Mercedes</DropdownItem>
           <DropdownItem data-make="Mini">Mini</DropdownItem>
-          <DropdownItem data-make="Mazda">Mazda</DropdownItem>
           <DropdownItem data-make="Nissan">Nissan</DropdownItem>
           <DropdownItem data-make="Renault">Renault</DropdownItem>
           <DropdownItem data-make="Subaru">Subaru</DropdownItem>
