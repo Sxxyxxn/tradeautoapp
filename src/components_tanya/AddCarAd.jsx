@@ -3,12 +3,8 @@ import { Button } from "reactstrap";
 import Axios from "axios";
 import * as UTILS from "../utils";
 import { navigate } from "@reach/router";
-import { IoIosArrowBack } from "react-icons/io";
-import "../css/shared.css";
-import "../css_tanya/style.css";
 import "../css_tanya/addcar_form.css";
 import default_image from "../images/default_img.png";
-import "../css_tanya/my_profile.css";
 import CarMakeDropdown from "./CarMakeDropdown";
 import YearDropdown from "./YearDropdown";
 
@@ -28,10 +24,6 @@ export default class AddCarAd extends Component {
     };
   }
 
-  // MyCarDetails = (e) => {
-  //   navigate(`/my-car-details/${this.data.id}`);
-  // };
-
   selectMake = (evt) => {
     var make = evt.target.getAttribute("data-make");
     if (make == null) return;
@@ -47,7 +39,6 @@ export default class AddCarAd extends Component {
   addCar = (e) => {
     e.preventDefault();
     var formData = new FormData(this.formRef.current);
-    // FYI: form still works even if there is no image included
     // forms with images look a bit different - we need to add this line.
     var settings = {
       headers: { "Content-Type": "multipart/form-data" },
@@ -82,17 +73,6 @@ export default class AddCarAd extends Component {
     this.setState({ model: e.target.value });
   };
 
-  // uploadToExpress = (e) => {
-  //   e.preventDefault();
-  //   // grab reference to the form data
-  //   var formData = new FormData(this.formRef.current);
-  //   var settings = { headers: { "Content-Type": "multipart/form-data" } };
-  //   console.log(">>>+ FORMDATA ", formData);
-  //   Axios.post(UTILS.add_car, formData, settings).then((res) => {
-  //     console.log(res);
-  //   });
-  // };
-
   separateNumber = () => {
     var numberToCovert = document.querySelector(".odometer-input-t");
     var val = numberToCovert.value.replace(/,/g, "");
@@ -100,24 +80,17 @@ export default class AddCarAd extends Component {
     var output = val.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     numberToCovert.value = output;
   };
-  // separateNumber = () => {
-  //   var numberToCovert = document.querySelector(".price-input-t");
-  //   var val = numberToCovert.value.replace(/,/g, "");
-  //   var output = val.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-  //   numberToCovert.value = output;
-  // };
 
   render() {
     return (
       <div className="main-content-t">
         <h1 className="header">Sell Your Car</h1>
         <h2 className="vehicle-details-title">Vehicle details</h2>
-        {/* <h2 className="vehicle-details ">Vehicle Details</h2> */}
+
         <div className="card form-container-t">
           <div className="card-body   pt-0">
             <form onSubmit={this.addCar} ref={this.formRef}>
               <div className=" main-redline-input container-t year-container-t  ">
-                {/* <label>Year</label> */}
                 <input
                   id="year"
                   type="hidden"
@@ -132,7 +105,6 @@ export default class AddCarAd extends Component {
               </div>
 
               <div className=" main-redline-input container-t">
-                {/* <label>Make</label> */}
                 <input
                   id="make"
                   type="hidden"
@@ -146,7 +118,6 @@ export default class AddCarAd extends Component {
                 />
               </div>
               <div className=" main-redline-input md-form">
-                {/* <label>Model</label> */}
                 <input
                   id="model"
                   type="text"
@@ -156,7 +127,6 @@ export default class AddCarAd extends Component {
                 />
               </div>
               <div className="main-redline-input md-form">
-                {/* <label>Odometer</label> */}
                 <input
                   className="odometer-input-t"
                   id="odometer"
@@ -166,11 +136,9 @@ export default class AddCarAd extends Component {
                 />
               </div>
               <div className=" main-redline-input md-form">
-                {/* <label>Price</label> */}
                 <input
                   className="price-input-t"
                   id="price"
-                  // type="number"
                   name="price"
                   placeholder="Price"
                   onChange={this.changePrice}
@@ -202,12 +170,7 @@ export default class AddCarAd extends Component {
                     {/* if first statement is false it will not render second part */}
                     {this.state.filename != "" && (
                       <div className="image-for-input-wrapper-t">
-                        <img
-                          // style={{ height: 100 }}
-                          src={this.state.previewURL}
-                          alt="image"
-                        />
-                        {/* {this.state.filename} */}
+                        <img src={this.state.previewURL} alt="image" />
                       </div>
                     )}
                   </div>
@@ -221,13 +184,6 @@ export default class AddCarAd extends Component {
                   type="file"
                   onChange={this.onFileUpdate}
                 ></input>
-
-                {/* <input
-                  type="file"
-                  name="car_image"
-                  id="car_image"
-                  // onChange={this.uploadToExpress}
-                /> */}
               </div>
               <Button
                 disabled={

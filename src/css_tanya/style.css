@@ -1,45 +1,17 @@
-textarea {
-    background-color: #1d1f2b;
-}
-
 /* ___general styling____ */
 .main-content-t {
+  display: flex;
 
-    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-    flex-direction: column;
-    min-height: 100vh;
-
-    box-sizing: border-box;
-    /* margin-left: 3rem; */
-    width: 100%;
-    display: flex;
+  box-sizing: border-box;
+  /* margin-left: 3rem; */
+  width: 100%;
+  display: flex;
 }
-
-
-
 
 .row-t {
-    display: flex;
-    flex-direction: row;
-}
-
-/* ___general styling finished____ */
-
-
-
-
-/* _____reeplace to shared_______ */
-form {
-    background-color: #1d1f2b;
-}
-
-
-::placeholder {
-    color: #fffffc;
-    opacity: 1;
-}
-
-.main-redline-input>input {
-    background-color: #1d1f2b;
+  display: flex;
+  flex-direction: row;
 }

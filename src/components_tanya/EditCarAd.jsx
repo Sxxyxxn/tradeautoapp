@@ -5,9 +5,6 @@ import * as UTILS from "../utils";
 import { Button } from "reactstrap";
 import CarMakeDropdown from "./CarMakeDropdown";
 import YearDropdown from "./YearDropdown";
-import "../css/shared.css";
-import "../css_tanya/style.css";
-import "../css_tanya/my_profile.css";
 import "../css_tanya/addcar_form.css";
 
 export default class EditCarAd extends Component {
@@ -57,7 +54,6 @@ export default class EditCarAd extends Component {
     e.preventDefault();
     var formData = new FormData(this.formRef.current);
 
-    // FYI: form still works even if there is no image included
     // forms with images look a bit different - we need to add this line.
     var settings = {
       headers: { "Content-Type": "multipart/form-data" },
@@ -78,16 +74,6 @@ export default class EditCarAd extends Component {
     var output = val.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     numberToCovert.value = output;
   };
-  // separateNumber = () => {
-  //   var numberToCovert = document.querySelectorAll(".change-input-format-t");
-  //   var i;
-  //   for (i = 0; i < numberToCovert.length; i++) {
-  //     var singleInput = numberToCovert[i];
-  //     var val = singleInput.value.replace(/,/g, "");
-  //     var output = val.replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-  //     singleInput.value = output;
-  //   }
-  // };
 
   onFileUpdate = (e) => {
     if (e.target.files.length == 0) return;
@@ -106,9 +92,6 @@ export default class EditCarAd extends Component {
     console.log("hello ", this.state.isLoaded);
 
     return (
-      //    {
-      //   this.state.isLoaded === false && <span>loading</span>;
-      // }
       <div className="main-content-t">
         <h1 className="header">Edit details</h1>
         <h2 className="vehicle-details-title">Vehicle details</h2>
@@ -116,7 +99,7 @@ export default class EditCarAd extends Component {
         <div className="card form-container-t">
           <div className="card-body   pt-0">
             <form ref={this.formRef} onSubmit={this.EditCarAd}>
-              <div className=" main-redline-input edit-year-container-t  ">
+              <div className=" main-redline-input year-container-t  ">
                 <input
                   id="year"
                   type="hidden"
@@ -129,7 +112,7 @@ export default class EditCarAd extends Component {
                 />
               </div>
 
-              <div className=" main-redline-input md-form">
+              <div className=" main-redline-input md-form container-t">
                 <input
                   type="hidden"
                   name="make"
@@ -143,7 +126,6 @@ export default class EditCarAd extends Component {
               </div>
 
               <div className=" main-redline-input md-form">
-                {/* <label>Model</label> */}
                 <input
                   id="model"
                   type="text"
@@ -153,11 +135,9 @@ export default class EditCarAd extends Component {
                 />
               </div>
               <div className="main-redline-input md-form">
-                {/* <label>Odometer</label> */}
                 <input
                   className="odometer-input-t"
                   id="odometer"
-                  // type="number"
                   name="odometer"
                   placeholder="Odometer"
                   defaultValue={this.state.car.odometer}
@@ -166,12 +146,9 @@ export default class EditCarAd extends Component {
               </div>
 
               <div className=" main-redline-input md-form">
-                {/* <label>Price</label> */}
                 <input
-                  // className="change-input-format-t"
                   className="price-input-t"
                   id="price"
-                  // type="number"
                   name="price"
                   placeholder="Price"
                   defaultValue={this.state.car.price}
@@ -187,19 +164,6 @@ export default class EditCarAd extends Component {
               </div>
               <input id="id" type="hidden" name="id" value={this.props.id} />
               <div className=" main-redline-input md-form image-upload-container-t">
-                {/* <figure style={{ color: "snow" }}>
-                  <img
-                    className=""
-                    src={image_path}
-                    display="none"
-                    width="100px"
-                    alt="current car"
-                  />
-                  <figcaption className="image-name-t">
-                    Current image:{car_image}
-                  </figcaption>
-                </figure> */}
-
                 <label
                   style={{ fontSize: "1.5rem", color: "gray" }}
                   htmlFor="files"
@@ -210,19 +174,11 @@ export default class EditCarAd extends Component {
                     {this.state.filename == "" && (
                       <div className="image-for-input-wrapper-t">
                         <img src={image_path} />
-                        {/* <figcaption className="image-name-t">
-                          {car_image}
-                        </figcaption> */}
                       </div>
                     )}
                     {this.state.filename != "" && (
                       <div className="image-for-input-wrapper-t">
-                        <img
-                          // style={{ height: 100 }}
-                          src={this.state.previewURL}
-                          alt="image"
-                        />
-                        {/* {this.state.filename} */}
+                        <img src={this.state.previewURL} alt="image" />
                       </div>
                     )}
                   </div>
@@ -237,14 +193,6 @@ export default class EditCarAd extends Component {
                   onChange={this.onFileUpdate}
                   defaultValue={car_image}
                 ></input>
-
-                {/* 
-                <input
-                  type="file"
-                  id="car_image"
-                  name="car_image"
-                  defaultValue={car_image}
-                ></input> */}
               </div>
               <Button
                 className="red-btn-t"

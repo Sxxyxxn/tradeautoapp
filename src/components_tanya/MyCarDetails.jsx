@@ -3,8 +3,6 @@ import Axios from "axios";
 import * as UTILS from "../utils";
 import { Button } from "reactstrap";
 import { navigate } from "@reach/router";
-import { IoIosArrowBack } from "react-icons/io";
-// import EditButton from "./EditButton";
 import picture_women from "../images/women.png";
 import "bootstrap/dist/css/bootstrap.css";
 import "../css/shared.css";
@@ -13,7 +11,6 @@ import "../css_tanya/car_details.css";
 import { FiPhone } from "react-icons/fi";
 import { FiMail } from "react-icons/fi";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
-import { Link } from "@reach/router";
 import Comments from "../components_ella/Comments";
 
 export default class MyCarDetails extends Component {
@@ -42,10 +39,7 @@ export default class MyCarDetails extends Component {
   removeCar = (evt) => {
     var carid = evt.target.getAttribute("data-id");
     Axios.delete(`${UTILS.cars_url}/${carid}`).then(
-      (res) => {
-        console.log("DELETED");
-        //navigate("/all-cars");
-      },
+      (res) => {},
       (error) => {
         console.log("error = ", error);
       }
@@ -80,34 +74,17 @@ export default class MyCarDetails extends Component {
     navigate(`/my-profile`);
   };
 
-  //do we need it:
-  gotoAddCar = (e) => {
-    navigate(`/add-car`);
-  };
-
   render() {
     return (
       <div className="main-content-t">
+        <h1 className="header">Selling Car Details</h1>
         <div className="my-car-details-container-t">
-          <div className="header-w-arrow">
-            <h1>
-              <Link to="/add-car">
-                <IoIosArrowBack color="#d92546" />
-              </Link>
-            </h1>
-            <h1>Selling Car Details</h1>
-            <h1 style={{ visibility: "hidden" }}>
-              <IoIosArrowBack />
-            </h1>
-          </div>
           <div className=" row-t my-car-image-wrapper-t">
             <img
-              // width={100}
               src={`http://localhost:4000/assets/${this.state.car.car_image}`}
               alt="my-car-image"
             />
           </div>
-
           <div className="titles-container-t ">
             <div className="row-t car-titles-container-t">
               <h1 className="make-big-title-t"> {this.state.car.make} </h1>
@@ -129,7 +106,6 @@ export default class MyCarDetails extends Component {
               </div>
             </div>
           </div>
-
           <div className="row-t user-details-container-horisontal-t">
             <div className="  user-small-image-wrapper-t">
               <img src={picture_women} alt="women-img" />
@@ -143,11 +119,12 @@ export default class MyCarDetails extends Component {
               <FiMail />
             </div>
           </div>
-
-          <Comments
-            className="comments-container-t"
-            comments={this.state.car.comments}
-          />
+          <div className="row-t comments-container-t">
+            <Comments
+              className="comments-container-t"
+              comments={this.state.car.comments}
+            />
+          </div>
 
           <div className="row-t buttons-container-t">
             <Button

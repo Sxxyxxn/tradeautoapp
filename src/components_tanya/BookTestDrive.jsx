@@ -51,7 +51,7 @@ export default class BookTestDrive extends Component {
       <div className="main-content-t  booking-content-t">
         <div className="header-w-arrow header-t">
           <h1 className="arrow-t">
-            <Link to="/cars/{this.props.id}">
+            <Link to={`/cars/${this.props.id}`}>
               <IoIosArrowBack color="#d92546" />
             </Link>
           </h1>
@@ -81,7 +81,7 @@ export default class BookTestDrive extends Component {
               placeholderText="Select a booking date"
             />
           </div>
-          {/* <p> The date you've selected is: {this.onChange.date}</p> */}
+
           <Button
             onClick={this.gotoBookingDetails}
             className=" red-btn-t  btn-next-t btn-book-t"

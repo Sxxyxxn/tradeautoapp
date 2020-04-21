@@ -13,6 +13,32 @@ export default class FilteredCars extends Component {
     this.state = { cars: [] };
   }
 
+  // componentDidMount() {
+  //   Axios.get(UTILS.cars_url).then(
+  //     (res) => {
+  //       if (res.data.result === false) {
+  //         this.setState({ result: false });
+  //       } else {
+  //         this.setState({ cars: res.data, result: true });
+  //       }
+  //     },
+  //     (error) => {
+  //       console.log("error = ", error);
+  //     }
+  //   );
+  // }
+
+  checkForSearchTerm = (arr) => {
+    let count = 0;
+    arr.forEach((item) => {
+      if (item.make === this.props.location.state.make) {
+        count++;
+      }
+    });
+
+    return count;
+  };
+
   componentDidMount() {
     Axios.get(UTILS.cars_url).then(
       (res) => {
@@ -49,6 +75,8 @@ export default class FilteredCars extends Component {
     var make = this.props.location.state.make;
     var sortHigh = this.props.location.state.sortHigh;
     // var sortLow = this.props.location.state.sortlow;
+    // console.log(make);
+    // console.log(this.state.cars.length);
     return (
       <div className="main-content-t">
         <div className="header-w-arrow">
@@ -57,11 +85,15 @@ export default class FilteredCars extends Component {
               <IoIosArrowBack color="#d92546" />
             </Link>
           </h1>
-          <h1>Car Search</h1>
+          <h1>Search Results</h1>
           <h1 style={{ visibility: "hidden" }}>
             <IoIosArrowBack />
           </h1>
         </div>
+        {this.state.result === false ? (
+          <p className="no-results-t">Sorry. No results found</p>
+        ) : // <p></p>
+        null}
         {this.state.result === false ? <CarNotFound /> : null}
 
         {this.state.cars

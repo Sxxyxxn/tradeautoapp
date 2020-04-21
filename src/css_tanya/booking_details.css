@@ -1,20 +1,21 @@
- .btn-cofirm-t {
-     margin-top: 50%;
- }
+.btn-cofirm-t {
+  margin-top: 49%;
+}
 
+.date-time-container-t {
+  border-bottom: 2px solid #b42f47;
+  padding-bottom: 1.5rem;
+  width: 100%;
+}
 
- .date-time-container-t {
-     border-bottom: 2px solid #b42f47;
-     padding-bottom: 1.5rem;
-     width: 100%;
- }
+.time-container-t {
+  padding-top: 1.5rem;
+}
 
- .time-container-t {
-     padding-top: 1.5rem;
- }
+.date-time-container-t span {
+  padding-right: 1rem;
+}
 
- .date-time-container-t span {
-
-     padding-right: 1rem;
-
- }
+li .footer-item-red * {
+  color: #b42f47;
+}

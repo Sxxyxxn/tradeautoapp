@@ -16,7 +16,7 @@
   /* width: 85%; */
 }
 
-.car-titles-t>h2 {
+.car-titles-t > h2 {
   padding-right: 1.5rem;
   color: #a6a6a6;
   font-style: italic;
@@ -38,7 +38,7 @@
   padding: 2rem 0rem;
   text-align: left;
   font-weight: 600;
-  font-style: italic
+  font-style: italic;
 }
 
 .calendar-container-t {
@@ -48,13 +48,13 @@
 }
 
 .btn-book-t {
-  margin-top: 59%;
+  margin-top: 67%;
 }
 
 .arrow-t {
   margin-right: 17%;
 }
 
-.main-content-t>.header-t {
+.main-content-t > .header-t {
   justify-content: flex-start;
 }

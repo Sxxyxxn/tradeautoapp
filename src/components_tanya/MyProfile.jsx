@@ -3,7 +3,6 @@ import Axios from "axios";
 import * as UTILS from "../utils";
 import { Button } from "reactstrap";
 import { navigate } from "@reach/router";
-// import EditButton from "./EditButton";
 import "bootstrap/dist/css/bootstrap.css";
 import "../css/shared.css";
 import "../css_tanya/style.css";
