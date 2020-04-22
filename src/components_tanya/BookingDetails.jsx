@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import * as UTILS from "../utils";
 import Axios from "axios";
@@ -18,9 +17,8 @@ export default class BookingDetails extends Component {
       time: "",
       modal: false,
     };
+    console.log(this.props);
 
-    // inside the constructor we can set the state directly
-    // outside we use setState only.
     if (typeof this.props.bookingDate === "string") {
       let temp = this.props.bookingDate.split(" ");
       let dateStr = `${temp[0]}, ${temp[1]} ${temp[2]}, ${temp[3]}`;
@@ -28,12 +26,13 @@ export default class BookingDetails extends Component {
       console.log("dateStr ", dateStr);
       console.log("timeStr ", timeStr);
 
+      var timeArray = timeStr.split(":");
+
       this.state.date = dateStr;
-      this.state.time = timeStr;
+      this.state.time = timeArray[0] + ":" + timeArray[1];
     }
   }
 
-  // using Axious third party scripts :
   componentDidMount() {
     Axios.get(`${UTILS.cars_url}/${this.props.id}`).then((res) => {
       console.log(res.data);
