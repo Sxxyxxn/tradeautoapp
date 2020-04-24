@@ -6,6 +6,7 @@ import {
   AiOutlineCar,
   AiOutlineUser,
 } from "react-icons/ai";
+//** npm install react-icons --save **//
 import "../css_ella/globalnav.css";
 
 export default class GlobalNav extends Component {

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Axios from "axios";
+// ** npm install axios **//
 import * as UTILS from "../utils";
+//** npm install utils **//
 
 export default class Comments extends Component {
   removeComment = (e) => {

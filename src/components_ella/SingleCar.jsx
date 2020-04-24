@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Axios from "axios";
+// ** npm install axios **//
 import "../css/shared.css";
 import "../css_ella/view_car_details.css";
 import "../css_ella/home.css";
 import * as UTILS from "../utils";
+//** npm install utils **//
 
 export default class SingleCar extends Component {
   constructor(props) {

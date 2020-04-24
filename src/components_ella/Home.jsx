@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import Axios from "axios";
+// ** npm install axios **//
+
 import * as UTILS from "../utils";
+//** npm install utils **//
+
 import SingleCarAsCard from "./SingleCarAsCard";
 import "../css_ella/home.css";
-// import { findAllByDisplayValue } from "@testing-library/react";
 
 export default class Home extends Component {
   constructor(props) {
