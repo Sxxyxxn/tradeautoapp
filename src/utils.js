@@ -1,6 +1,6 @@
-const server_url = "http://localhost:4000/";
+const server_url = "https://cartradeauto.herokuapp.com/";
 const assets_url = server_url + "assets/";
-const api_url = "http://localhost:4000/api";
+const api_url = "https://cartradeauto.herokuapp.com/api";
 const cars_url = api_url + "/cars";
 const comments_url = api_url + "/comments";
 
